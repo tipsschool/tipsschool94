@@ -4,108 +4,121 @@ tips_school/
 ├── css/
 │    └── style.css
 └── images/
-     └── logo.png  (your school logo)
-/* Reset & Body */
+     └── logo.png
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f8f8f8;
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    padding:0;
+    background: #f0f2f5;
 }
 
-/* Header with Sky Blue */
+/* Header hero */
 header {
-    background: #87CEEB;
-    color: black;
-    padding: 20px;
+    background: linear-gradient(135deg, #87CEEB, #FFD700, #FF4C4C);
+    color: white;
+    padding: 60px 20px;
     text-align: center;
 }
 
 header img {
-    height: 80px;
-    vertical-align: middle;
+    height: 100px;
 }
 
 header h1 {
-    display: block;
-    margin-top: 10px;
-    font-size: 2.5em;
+    font-size: 3em;
+    margin: 10px 0;
 }
 
-/* Navigation / Admin Button */
+header p {
+    font-size: 1.2em;
+}
+
+/* Navigation */
 nav {
-    background: #FF4C4C; /* Red */
-    padding: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    background: #FF4C4C;
+    padding: 15px 0;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
-    margin: 0 15px;
+    margin: 0 20px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background: rgba(255,255,255,0.2);
 }
 
-/* Main Section with Yellow background cards */
+/* Sections */
 section {
-    padding: 40px;
-    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card {
-    background: #FFFACD; /* Yellow */
-    padding: 25px;
-    margin: 20px auto;
-    width: 70%;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: white;
+    padding: 30px;
+    margin: 20px 0;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 /* Buttons */
 button {
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
     border: none;
+    border-radius: 8px;
     background: #FF4C4C;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    transition: 0.3s;
 }
 
 button:hover {
     background: #e04343;
 }
 
+/* Gallery grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 /* Footer */
 footer {
     background: #87CEEB;
-    color: black;
+    color: white;
     text-align: center;
-    padding: 15px;
-}
-
-/* Form */
-form {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 0 auto;
-    gap: 10px;
-}
-
-input[type="file"] {
-    padding: 5px;
+    padding: 25px;
+    margin-top: 40px;
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TIPSSchool - Home</title>
+    <title>TIPSSchool</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -126,23 +139,25 @@ input[type="file"] {
     <a href="#">Class</a>
     <a href="#">Results</a>
     <a href="#">Knowledge</a>
-    <a href="admin_login.html">Admin</a>
+    <a href="#">Admin</a>
 </nav>
 
-<!-- Main Section -->
+<!-- Hero Section -->
 <section>
     <div class="card">
         <h2>Welcome to TIPSSchool</h2>
         <p>
-            Success comes to those who never give up. Education is the key to your bright future.
-            Stay focused, work hard, and achieve greatness. Every small step you take today
-            leads to big success tomorrow.
+            “Success comes to those who never give up. Education is the key to a bright future.
+            Stay focused, work hard, and achieve greatness!”
         </p>
+        <button>Learn More</button>
     </div>
+</section>
 
+<!-- Admin Upload Section -->
+<section>
     <div class="card">
         <h2>Admin Upload Section (Demo)</h2>
-        <p>Only for admin to upload photos/videos (static demo version)</p>
         <form>
             <input type="file" accept="image/*">
             <input type="file" accept="video/*">
@@ -158,94 +173,9 @@ input[type="file"] {
 
 <script>
 function uploadDemo() {
-    alert("Demo upload: Files cannot be uploaded on static site. Replace manually in 'images' folder.");
+    alert("Demo upload: Replace files manually in 'images' folder.");
 }
 </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TIPSSchool - About</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-    <img src="images/logo.png" alt="TIPSSchool Logo">
-    <h1>TIPSSchool</h1>
-    <p>Contact: +92 3414700129 | Email: tipsschool4757@gmail.com</p>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="admissions.html">Admissions</a>
-    <a href="class.html">Class</a>
-    <a href="results.html">Results</a>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TIPSSchool - Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-    <img src="images/logo.png" alt="TIPSSchool Logo">
-    <h1>TIPSSchool</h1>
-    <p>Contact: +92 3414700129 | Email: tipsschool4757@gmail.com</p>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="admissions.html">Admissions</a>
-    <a href="class.html">Class</a>
-    <a href="results.html">Results</a>
-    <a href="knowledge.
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TIPSSchool - Admissions</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-    <img src="images/logo.png" alt="TIPSSchool Logo">
-    <h1>TIPSSchool</h1>
-    <p>Contact: +92 3414700129 | Email: tipsschool4757@gmail.com</p>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="admissions.html">Admissions</a>
-    <a href="class.html">Class</a>
-    <a href="results.html">Results</a>
-    <a href="knowledge.html">Knowledge</a>
-    <a href="admin_login.html">Admin</a>
-</nav>
-
-<section>
-    <div class="card">
-        <h2>Admissions</h2>
-        <p>We welcome students to join TIPSSchool and be part of a successful learning environment.</p>
-        <p>Fill out the admission form and submit the required documents at the school office.</p>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2025 TIPSSchool | All Rights Reserved</p>
-</footer>
 
 </body>
 </html>
